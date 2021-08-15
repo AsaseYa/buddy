@@ -1,0 +1,2 @@
+# buddy
+Bot for discord
