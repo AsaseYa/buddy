@@ -1,0 +1,25 @@
+{
+  "name": "buddy",
+  "version": "1.0.0",
+  "description": "bot for discord",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsaseYa/buddy.git"
+  },
+  "author": "Asa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AsaseYa/buddy/issues"
+  },
+  "homepage": "https://github.com/AsaseYa/buddy#readme",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.12",
+    "rich-embed": "^1.1.3"
+  }
+}
