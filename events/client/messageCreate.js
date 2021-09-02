@@ -9,8 +9,8 @@ module.exports = async (client, messageCreate) => {
      //si le msg est en DM
      if (messageCreate.channel.type === "dm")
           return client.emit("directMessage", messageCreate);
-     
-     const prefix= "!";
+
+     const prefix = "!";
 
      //si l'author est le bot
      if (messageCreate.author.bot) return;
@@ -27,16 +27,41 @@ module.exports = async (client, messageCreate) => {
      //crée user pour vérification
      const user = messageCreate.mentions.users.first();
 
+     // if (!isNaN(commandName)) {
+     //      console.log(commandName)
+     // }else {
+     //      console.log('Nan');
+     // }
+
+     //if commandName commence par un nombre quel qu'il soit
+     // if(commandName.match(/^\d/)) {
+     //      roll.run(client, messageCreate, commandName, args, prefix); //run la commande
+     // };
+
+
      //stock la commande ou aliases dans command
-     const command =
+     let command = '';
+
+     // if (commandName.match(/^\d/) || commandName.startsWith('d')) {  //if commandName commence par un nombre quel qu'il soit
+     //      command = client.commands.get('roll');
+     // } else {
+     //      command =
+     //           client.commands.get(commandName) ||
+     //           client.commands.find(
+     //                (cmd) =>
+     //                     cmd.help.aliases && cmd.help.aliases.includes(commandName)
+     //           )
+     // }
+
+     command =
           client.commands.get(commandName) ||
           client.commands.find(
                (cmd) =>
                     cmd.help.aliases && cmd.help.aliases.includes(commandName)
-          );
+          )
 
      //si la commande n'existe pas ou s'il n'y a pas d'argument
-     if (!command) return `La commande ${command} n'existe pas.`;
+     if (!command) return messageCreate.channel.send(`La commande n'existe pas.`);
 
 
      //Si permissions: true
@@ -57,5 +82,5 @@ module.exports = async (client, messageCreate) => {
           return noArgs(messageCreate, command, prefix);
      }
 
-     command.run(client, messageCreate, args, prefix); //run la commande
+     command.run(client, messageCreate, commandName, args, prefix); //run la commande
 };

@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 const { readdirSync } = require("fs");
 const categoryList = readdirSync("./commands");
 
-module.exports.run = (client, messageCreate, args, prefix) => {
+module.exports.run = (client, messageCreate, commandName, args, prefix) => {
      if (!args.length) {
           const embed = new MessageEmbed()
                .setColor("#36393F")
