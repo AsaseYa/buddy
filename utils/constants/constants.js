@@ -46,7 +46,7 @@ const MESSAGES = {
                     aliases: ["hello"],
                     category: "misc",
                     description: "Renvoie un salut",
-                    usage: "Renvoi un salut",
+                    usage: "",
                     args: false,
                     hasMention: false,
                     permissions: false,

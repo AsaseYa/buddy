@@ -1,3 +1,6 @@
 /node_modules
 /.env
 /tests
+.idea/
+/tests/zen.js
+/tests/fact.js

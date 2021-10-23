@@ -1,6 +1,6 @@
 const { MESSAGES } = require("../../utils/constants/constants");
 
-module.exports.run = (client, messageCreate, args) => {
+module.exports.run = (client, messageCreate, commandName, args, prefix) => {
      messageCreate.channel.send("Salut!");
 };
 
